@@ -4,16 +4,23 @@ __human_name__ = 'arguments'
 
 # Add your code after this line
 
-def greet (name_patient, name = "Doc" ):
-    print ("Hello " + name + "!")
-    print ("What's up " + name_patient + "!")
+def greet(name, msg="Hello, <name>!"):
 
-greet("Bob")
+      greeting = msg.replace('<name>', name)
+
+      f'{msg} {name}!'
+
+      return greeting
+
+
+print(greet('Doc'))
+
+print(greet('Bob', "What's up, <name>"))
+
 
 def force(mass, body="earth"):
     force = mass * round(planets[body],1)
-    print(force)
-
+    return force
 
 planets = {"sun": 274,
            "jupiter": 24.92,
@@ -28,25 +35,11 @@ planets = {"sun": 274,
            "pluto": 0.58}
 
 
-#for item in planets:
-#   print (item, ":" ,planets[item])#prints keys and value
-
-#for item in  planets:
-    #print (item)#prints key
-    #print (planets[item])#prints value
-
 force (2, "moon")
 
-def pull (m1, m2, d2):
+def pull (m1, m2, d):
     g = 6.674*(10**-11)
+    pull = g * ((m1 * m2)/(d**2))
+    return (pull)
 
-    m = (m1 * m2)
-    md = m /d2**2
-    #print (md)
-
-    f = g * md
-    print (round(f,2))
-    return
-
-pull(0.1, 5.972*(10**24), 6.371*(10**6))
-
+pull(800, 1500, 3)
